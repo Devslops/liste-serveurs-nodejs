@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
 
 //Connexion BDD
 mongoose.Promise = Promise
-mongoose.connect('mongodb://localhost:27017/ecommerce', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb://localhost:27017/lsm', { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -21,7 +21,7 @@ db.once("open", function() {
     console.log("Connexion OK");
 });
 
-//Traitement header
+//Tra   itement header
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
